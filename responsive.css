@@ -1,0 +1,92 @@
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    /* Ẩn Tìm kiếm và Hotline trên Mobile để Header không bị quá cao */
+    .search-box, .hotline {
+        display: none;
+    }
+
+    /* Biến Menu thành Menu trượt (Mobile Menu) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Ẩn menu sang phải */
+        width: 250px;
+        height: 100vh;
+        background-color: #050A30;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        gap: 30px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-menu.active {
+        right: 0; /* Hiện menu khi bấm nút */
+    }
+
+    /* Hiện nút Hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Hiệu ứng nút Hamburger khi mở */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Responsive cho các Section khác */
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên Tablet */
+    }
+    /* Ẩn bớt thanh tìm kiếm hoặc Hotline nếu quá chật */
+    .search-container {
+        display: none; /* Thông thường trên Mobile tìm kiếm sẽ thu gọn vào 1 icon */
+    }
+    
+    .hotline {
+        display: none; /* Hoặc ẩn để ưu tiên không gian */
+    }
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên máy tính bảng */
+    }
+    .category-grid {
+        grid-template-columns: 1fr; /* 1 cột trên điện thoại */
+    }
+    .about-content p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .about-us {
+        margin: 50px auto;
+    }
+    .news-container {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
+    }
+     .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .newsletter-form {
+        width: 100%;
+    }
+}
+@media (max-width: 549px) {
+    .bn-1 {
+        background-image: url('image/ra-mat-dong-phuc-may-san-fastuni-doc') !important;
+    }
+    .bn-2{
+         background-image: url('image/bo-suu-tap-elegant-era-so-mi-600x800.jpg') !important;
+    }
+    .bn-3{
+         background-image: url('image/banner-bst-dong-phuc-teambuilding-mobile-1.jpg') !important;
+    }
+}
