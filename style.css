@@ -781,7 +781,7 @@ body {
     align-items: center;            /* Căn giữa theo chiều dọc */
     padding: 20px 0;
     margin-bottom: 20px;
-}
+}   
 
 .results-count {
     font-size: 16px;
@@ -886,4 +886,41 @@ body {
 }
 .btn-zalo-sidebar { background: #050A30; color: #fff; }
 .btn-call-sidebar { color: #050A30; }
+.pagination-product{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các ô số */
+    margin: 40px 0;
+}
+/* Định dạng từng ô số */
+.pagination-product a, 
+.pagination-product span {
+    display: flex;           /* Quan trọng: Để căn số vào giữa ô */
+    justify-content: center;
+    align-items: center;
+    width: 40px;             /* Chiều rộng ô vuông */
+    height: 40px;            /* Chiều cao ô vuông */
+    
+    border: 1px solid #000;  /* VIỀN ĐEN NGOÀI */
+    text-decoration: none !important; /* BỎ GẠCH CHÂN DƯỚI SỐ */
+    color: #000;             /* Màu chữ đen */
+    font-weight: bold;       /* Chữ in đậm */
+    background-color: #fff;  /* NỀN TRẮNG mặc định */
+    transition: all 0.3s ease;
+}
 
+/* Ô đang hiển thị (Số 1 có nền xám đen) */
+.pagination-product a.active, 
+.pagination-product .active {
+    background-color: #444;  /* BACKGROUND TỪNG SỐ (màu tối) */
+    color: #fff;             /* Chữ trắng để nổi bật trên nền tối */
+    border-color: #444;
+}
+
+/* Hiệu ứng khi di chuột qua các số */
+.pagination-product a:hover:not(.active) {
+    background-color: #050A30; /* Đổi sang màu xanh navy khi hover */
+    color: #fff;
+    border-color: #050A30;
+}
