@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DQ Uniform - Đồng Phục Chất Lượng</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="image/logo.png" alt="DQ Uniform Logo" />
+          </a>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="products.html">Sản phẩm</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+
+        <div class="search-box">
+          <div class="search-container">
+            <img src="image/search.png" class="search-icon" alt="search" />
+            <input type="text" placeholder="Tìm kiếm" class="search-input" />
+            <button type="submit" class="search-btn">Tìm kiếm</button>
+          </div>
+        </div>
+
+        <div class="hotline">
+          <div class="hotline-icon">
+            <img src="image/telephone 1.png" alt="Hotline Icon" />
+          </div>
+          <div class="hotline-text">
+            <span class="text-top">Tư vấn ngay</span>
+            <span class="phone-number">0905083882</span>
+          </div>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="hero-actions">
+          <a
+            href="https://zalo.me/0905083882"
+            class="action-btn zalo-btn"
+            target="_blank"
+          >
+            <div class="btn-icon">
+              <img src="image/icons8-zalo-480.png" alt="Zalo" />
+            </div>
+            <div class="btn-text">
+              <span>TƯ VẤN QUA</span>
+              <strong>ZALO</strong>
+            </div>
+          </a>
+
+          <a href="tel:0905083882" class="action-btn hotline-btn">
+            <div class="btn-icon">
+              <img src="image/phone-call.png" alt="Hotline" />
+            </div>
+            <div class="btn-text">
+              <span>HOTLINE HỖ TRỢ</span>
+              <strong>0905 083 882</strong>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div class="breadcrumb-area">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span class="delimiter">/</span>
+          <span class="current">Shop</span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="shop-container">
+      <aside class="sidebar">
+        <div class="sidebar-box">
+          <h3>Danh mục sản phẩm</h3>
+          <ul class="cat-list">
+            <li>
+              <a href="#">Bảo hộ lao động</a>
+            </li>
+            <li>
+              <a href="#">Đồng phục công sở </a>
+            </li>
+            <li>
+              <a href="#">Đồng phục công ty </a>
+            </li>
+            <li><a href="#">Đồng phục họp lớp</a></li>
+            <li><a href="#">Đồng phục mầm non</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box support-box">
+          <h3>Hỗ trợ tư vấn</h3>
+          <p><strong>Ms Quỳnh</strong></p>
+          <p class="phone-highlight">0886 268 268</p>
+          <p>Email: kinhdoanh@dpha.vn</p>
+          <div class="support-btns">
+            <a href="#" class="btn-zalo-sidebar">Nhắn qua Zalo</a>
+            <a href="#" class="btn-call-sidebar">Gọi ngay</a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div class="shop-header">
+          <div class="filter-mobile-wrapper" onclick="toggleSidebar()">
+            <img src="image/filter.png" alt="filter" class="filter-icon-img" />
+            <span>Lọc</span>
+          </div>
+          <p>Hiển thị 1-24 của 1210 kết quả</p>
+          <select class="sort-select">
+            <option>Mới nhất</option>
+            <option>Giá thấp đến cao</option>
+            <option>Giá cao đến thấp</option>
+          </select>
+        </div>
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="image/products/ao-thun-dong-phuc-polo-co-tim-mau-do-do-2.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="image/products/dong-phuc-hop-lop-10-nam-co-tron-mau-trang-8.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="image/products/dong-phuc-hop-lop-15-nam-mau-bien-nhat-phoi-vai-2.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="image/products/dong-phuc-hop-lop-30-nam-dai-hoc-kinh-te-quoc-dan-8.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="image/products/dong-phuc-hop-lop-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-2.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="image/products/dong-phuc-mam-non-co-tron-mau-xanh-bien-nhat-2.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="image/products/dong-phuc-mam-non-co-tron-mau-xanh-iris-2.jpg"
+              alt="Đồng phục"
+            />
+            <div class="product-info">
+              <h4>Đồng phục họp lớp 25 năm trường THPT Nguyễn Huệ</h4>
+              <span class="price">Giá từ: 115.000 đ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <span>...</span>
+          <a href="#">51</a>
+        </div>
+      </main>
+    </div>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="image/logo.png" alt="DQ Uniform Logo" />
+          </div>
+          <div class="footer-newsletter">
+            <p>Cập nhật thiết kế mới, ưu đãi độc quyền!</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Email Address" />
+              <button type="submit">
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Thông tin liên hệ</h3>
+            <ul>
+              <li>
+                <img src="image/location.png" class="footer-icon" /> Hồ Chí
+                Minh: 225/522 Điện Biên Phủ, Phường Bình Phú, Tp.HCM
+              </li>
+              <li>
+                <img src="image/telephone 1.png" class="footer-icon" /> Điện
+                thoại: 0905083882
+              </li>
+              <li>
+                <img src="image/mail.png" class="footer-icon" /> Email:
+                chungdangitnet@gmail.com
+              </li>
+              <li>
+                <img src="image/clock.png" class="footer-icon" /> Thời gian làm
+                việc: T2 - T6: 08:00 - 20:00
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Liên kết nhanh</h3>
+            <ul>
+              <li><a href="#">Trang chủ</a></li>
+              <li><a href="#">Sản phẩm</a></li>
+              <li><a href="#">Liên hệ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Thông tin hướng dẫn</h3>
+            <ul>
+              <li><a href="#">Hướng dẫn thanh toán</a></li>
+              <li><a href="#">Hướng dẫn chọn size</a></li>
+              <li><a href="#">Hướng dẫn đặt hàng</a></li>
+              <li><a href="#">Chính sách bảo hành hoàn tiền</a></li>
+              <li><a href="#">Chính sách mua hàng</a></li>
+              <li><a href="#">Chính sách giao hàng</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Danh mục sản phẩm</h3>
+            <ul>
+              <li><a href="#">Đồng phục áo thun</a></li>
+              <li><a href="#">Đồng phục công sở</a></li>
+              <li><a href="#">Đồng phục nhà hàng</a></li>
+              <li><a href="#">Đồng phục học sinh</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Do Not Sell or Share My Personal Information</a>
+            <a href="#">CS Supply Chain Transparency</a>
+            <a href="#">Vendor Code of Conduct</a>
+            <a href="#">Sitemap Pages</a>
+            <a href="#">Sitemap Products</a>
+          </div>
+          <p class="copyright">© 2023 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <div class="floating-contact">
+      <a
+        href="https://zalo.me/0905083882"
+        target="_blank"
+        class="contact-icon zalo"
+      >
+        <img src="image/icons8-zalo-480.png" alt="Zalo" />
+      </a>
+
+      <a href="tel:0905083882" class="contact-icon phone">
+        <div class="phone-ring"></div>
+        <img src="image/phone-call.png" alt="Phone" />
+      </a>
+
+      <a
+        href="https://m.me/yourprofile"
+        target="_blank"
+        class="contact-icon messenger"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
+          alt="Messenger"
+        />
+      </a>
+    </div>
+    <!--Linking SwipperJS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

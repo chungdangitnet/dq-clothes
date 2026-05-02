@@ -735,4 +735,155 @@ body {
 .floating-contact {
     animation: bounce 3s infinite ease-in-out;
 }
+/* Products*/
+/* --- Breadcrumb Style --- */
+.breadcrumb-area {
+    background-color: #ffffff; /* Nền trắng sạch sẽ */
+    padding: 20px 0; /* Khoảng cách trên dưới */
+    border-bottom: 1px solid #f1f1f1; /* Đường kẻ mờ bên dưới */
+}
+
+.breadcrumb-area .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #666; /* Màu xám cho Trang chủ */
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #050A30; /* Hover đổi màu Navy */
+}
+
+.breadcrumb .delimiter {
+    margin: 0 10px;
+    color: #ccc; /* Màu cho dấu gạch chéo / */
+}
+
+.breadcrumb .current {
+    font-weight: bold; /* Chữ Shop in đậm như mẫu */
+    color: #000;
+}
+.shop-header {
+    display: flex;
+    justify-content: space-between; /* Đẩy 2 bên về 2 đầu */
+    align-items: center;            /* Căn giữa theo chiều dọc */
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.results-count {
+    font-size: 16px;
+    color: #333;
+}
+.filter-mobile-wrapper {
+    display: none;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.support-box p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.filter-icon-img {
+    width: 20px; /* Điều chỉnh kích thước icon */
+    height: auto;
+}
+/* Tùy chỉnh ô chọn Mới nhất */
+.sort-select {
+    padding: 10px 15px;
+    border: 1px solid #000; /* Viền đen mỏng như ảnh */
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    min-width: 200px; /* Độ rộng của ô chọn */
+    appearance: none; /* Xóa mũi tên mặc định của trình duyệt để tự custom nếu muốn */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* Đặt mũi tên bên phải */
+}
+
+.sort-select:hover {
+    border-color: #666;
+}
+.shop-container {
+    max-width: 1250px;
+    margin: 30px auto;
+    display: flex;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+.sidebar { flex: 0 0 280px; }
+.main-content { flex: 1; }
+
+/* Sidebar Box */
+.sidebar-box { 
+    border: 1px solid #eee; 
+    margin-bottom: 20px;
+    border-radius: 8px; /* Bạn có thể tăng/giảm số này để bo nhiều hay ít */
+    overflow: hidden;
+ }
+.sidebar-box h3 { 
+    background: #050A30; color: #fff; 
+    padding: 10px 15px; font-size: 15px; text-transform: uppercase;
+}
+
+.cat-list { list-style: none; }
+.cat-list li a { 
+    display: flex; justify-content: space-between;
+    padding: 12px 15px; color: #333; text-decoration: none;
+    border-bottom: 1px solid #f5f5f5; font-size: 14px;
+}
+
+/* Lưới sản phẩm 4 cột */
+.product-grid {
+    display: grid;
+    /* Tự động chia cột, mỗi cột tối thiểu 200px, tối đa là 1 phần đều nhau */
+    grid-template-columns: repeat(auto-fill, minmax(210px,2fr)); 
+    gap: 20px;
+}
+
+.product-card { text-align: left; }
+.product-card img { 
+    width: 100%; aspect-ratio: 3/4; object-fit: cover; 
+    border-radius: 4px;
+}
+.product-info h4 {
+    font-size: 13px;
+    margin: 10px 0 5px;
+    color: #333;
+    height: 38px; /* Đủ cho 2 dòng */
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn đúng 2 dòng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-info .price { font-weight: bold; color: #000; font-size: 14px; }
+
+/* Nút hỗ trợ sidebar */
+.support-btns a {
+    display: block; text-align: center; padding: 8px;
+    margin: 10px 15px; border-radius: 5px; text-decoration: none;
+    border: 1px solid #050A30; font-size: 13px;
+}
+.btn-zalo-sidebar { background: #050A30; color: #fff; }
+.btn-call-sidebar { color: #050A30; }
 

@@ -61,3 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+function toggleSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const overlay = document.querySelector(".sidebar-overlay");
+
+  // Thêm hoặc xóa class 'active'
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+
+  // Ngăn cuộn trang khi đang mở menu
+  document.body.style.overflow = sidebar.classList.contains("active")
+    ? "hidden"
+    : "auto";
+}
