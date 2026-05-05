@@ -81,6 +81,7 @@
         width: 100%;
     }
     .shop-header {
+        display: flex;
         align-items: flex-start; /* Căn lề trái */
         gap: 15px;
         justify-content: space-between;
@@ -148,7 +149,29 @@
     /* Tự động chia cột, mỗi cột tối thiểu 200px, tối đa là 1 phần đều nhau */
     grid-template-columns: repeat(auto-fill, minmax(160px,2fr)); 
     gap: 20px;
-}
+    }
+    .pagination-product {
+        flex-wrap: wrap; /* Cho phép rớt dòng nếu quá dài */
+        gap: 5px;
+    }
+
+    .pagination-product .page-item {
+        width: 30px; /* Thu nhỏ ô số */
+        height: 30px;
+        font-size: 12px;
+    }
+    .pagination-product .dots {
+        width: 30px; /* Thu nhỏ ô số */
+        height: 30px;
+        font-size: 12px;
+    }
+    /*news*/
+     .featured-section {
+        flex-direction: column;
+    }
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media (max-width: 549px) {
     .bn-1 {

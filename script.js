@@ -74,3 +74,19 @@ function toggleSidebar() {
     ? "hidden"
     : "auto";
 }
+// 1. Lấy ID từ URL (ví dụ: ?id=ao-thun-01)
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+
+// 2. Tìm sản phẩm trong "kho"
+const product = products.find((p) => p.id === productId);
+
+// 3. Đổ dữ liệu vào giao diện
+if (product) {
+  document.getElementById("product-name").innerText = product.name;
+  document.getElementById("product-img").src = product.image;
+  document.getElementById("product-price").innerText = product.price;
+  document.getElementById("product-desc").innerText = product.desc;
+} else {
+  document.body.innerHTML = "<h1>Không tìm thấy sản phẩm!</h1>";
+}
