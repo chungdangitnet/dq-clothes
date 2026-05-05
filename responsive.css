@@ -172,6 +172,59 @@
     .news-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    /* 1. Mở rộng container ra sát mép màn hình một chút để lấy không gian */
+    .news-container, 
+    .news-section {
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+
+    /* 2. Chuyển Grid từ 2 cột thành 1 cột */
+    .row {
+        grid-template-columns: 1fr; /* Ép về 1 cột */
+        gap: 30px; /* Thu hẹp khoảng cách giữa các phần */
+    }
+
+    /* 3. Tiêu đề nhỏ lại cho vừa màn hình điện thoại */
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* 4. Điều chỉnh Bài viết nổi bật */
+    .featured-post h3 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    
+    .featured-post p {
+        font-size: 14px;
+        /* Giới hạn dòng để không quá dài trên mobile */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* 5. Quan trọng: Chỉnh lại phần Xem nhiều nhất */
+    .side-post-item {
+        gap: 10px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #eee; /* Thêm đường kẻ mờ phân cách giữa các bài */
+    }
+
+    .side-post-item img {
+        width: 100px;  /* Trên mobile ảnh sidebar nhỏ lại */
+        height: 70px;
+        border-radius: 4px;
+    }
+
+    .side-post-info h4 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
 }
 @media (max-width: 549px) {
     .bn-1 {
