@@ -670,7 +670,7 @@ body {
 /* Container chứa các icon */
 .floating-contact {
     position: fixed;
-    bottom: 40px;
+    bottom: 100px;
     right: 20px;
     z-index: 9999;
     display: flex;
@@ -1058,4 +1058,116 @@ body {
     font-size: 13px;
     color: #666;
     line-height: 1.5;
+}
+/* Khung nút tròn bọc bên ngoài */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #0d3b85; /* Màu xanh thương hiệu của bạn */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Định dạng cho ảnh PNG mũi tên bên trong */
+.back-to-top-btn .arrow-up-png {
+  width: 20px; /* Điều chỉnh kích thước mũi tên cho vừa vặn */
+  height: 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Class hiển thị nút khi cuộn chuột xuống */
+.back-to-top-btn.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hiệu ứng khi di chuột vào nút (Hover) */
+.back-to-top-btn:hover {
+  background-color: #0d3b85; /* Nền chuyển sang màu xanh */
+}
+
+.back-to-top-btn:hover .arrow-up-png {
+  transform: translateY(-3px); /* Mũi tên nhích nhẹ lên */
+  
+  /* Khử màu cũ và chuyển ảnh PNG thành màu TRẮNG tinh để nổi bật trên nền xanh */
+  filter: brightness(0) invert(1); 
+}
+
+.back-to-top-btn:hover .arrow-up-icon {
+  transform: translateY(-3px); /* Mũi tên nhích nhẹ lên khi hover tạo cảm giác chuyển động */
+}
+
+/* Khung bao ngoài phần nhận sỉ */
+.wholesale-section {
+  position: relative;
+  width: 100%;
+  height: 480px; /* Chiều cao hiển thị của dải hình ảnh ngang */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: url('image/may-ao-thun-co-tron.jpg'); /* Thay đường dẫn ảnh của bạn ở đây */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 40px; /* Tạo khoảng cách với phần tin tức phía trên */
+}
+
+/* Lớp phủ mờ (Overlay) giúp làm nổi bật chữ */
+.wholesale-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Khung chứa nội dung bên trong */
+.wholesale-content {
+  position: relative;
+  z-index: 2; /* Đảm bảo chữ luôn nằm trên lớp nền mờ */
+  width: 100%;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Điều chỉnh lại Button cho nhỏ gọn và tinh tế hơn */
+.wholesale-btn {
+  display: inline-block;
+  
+  /* ĐÃ THAY ĐỔI: Thu nhỏ độ dày bọc ngoài (padding) từ 16px 40px xuống 12px 32px */
+  padding: 12px 32px;
+  
+  /* ĐÃ THAY ĐỔI: Hạ cỡ chữ xuống 18px (vừa sang vừa nét, không bị quá to) */
+  font-size: 18px;         
+  
+  font-weight: 700;        
+  color: #ffffff;          
+  text-transform: uppercase;
+  text-decoration: none;   
+  background-color: #0d3b85; 
+  border: 2px solid #ffffff; 
+  border-radius: 30px;     
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); 
+  transition: all 0.3s ease; 
+}
+/* Hiệu ứng tương tác khi di chuột vào Button (Hover) */
+.wholesale-btn:hover {
+  background-color: #ffffff; /* Đổi nền sang trắng */
+  color: #0d3b85;            /* Đổi chữ sang màu xanh đậm */
+  border-color: #0d3b85;     /* Đổi viền sang màu xanh */
+  transform: scale(1.05);    /* Nút phóng to nhẹ lên một chút tạo độ nhạy */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }

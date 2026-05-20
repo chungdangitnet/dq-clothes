@@ -354,6 +354,14 @@
         </div>
       </div>
     </section>
+    <section class="wholesale-section">
+      <div class="wholesale-overlay"></div>
+      <div class="wholesale-content">
+        <a href="tel:0905083882" class="wholesale-btn">
+          NHẬN SỈ ÁO THUN - LIÊN HỆ NGAY
+        </a>
+      </div>
+    </section>
     <footer class="main-footer">
       <div class="footer-container">
         <div class="footer-top">
@@ -467,6 +475,37 @@
         />
       </a>
     </div>
+    <button
+      id="back-to-top"
+      class="back-to-top-btn"
+      aria-label="Cuộn lên đầu trang"
+    >
+      <img src="image/up-arrow.png" alt="Mũi tên lên" class="arrow-up-png" />
+    </button>
+    <script>
+      window.addEventListener("shadow-scroll-init", () => {}); // Mẹo kích hoạt ngầm
+
+      const bttBtn = document.getElementById("back-to-top");
+      if (bttBtn) {
+        // Hiện nút khi cuộn xuống quá 300px
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            bttBtn.classList.add("show");
+          } else {
+            bttBtn.classList.remove("show");
+          }
+        });
+
+        // Cuộn lên đầu trang mượt mà khi click
+        bttBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      }
+    </script>
+
     <!--Linking SwipperJS-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
