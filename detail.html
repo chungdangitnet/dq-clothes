@@ -27,7 +27,7 @@
         <ul class="nav-menu">
           <li><a href="index.html">Trang chủ</a></li>
           <li><a href="products.html">Sản phẩm</a></li>
-          <li><a href="news.html">Tin tức</a></li>
+          <li><a href="news.html">Tin Tức</a></li>
         </ul>
 
         <div class="search-box">
@@ -53,31 +53,6 @@
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
-        <div class="hero-actions">
-          <a
-            href="https://zalo.me/0971067676"
-            class="action-btn zalo-btn"
-            target="_blank"
-          >
-            <div class="btn-icon">
-              <img src="image/icons8-zalo-480.png" alt="Zalo" />
-            </div>
-            <div class="btn-text">
-              <span>TƯ VẤN QUA</span>
-              <strong>ZALO</strong>
-            </div>
-          </a>
-
-          <a href="tel:0888868025" class="action-btn hotline-btn">
-            <div class="btn-icon">
-              <img src="image/phone-call.png" alt="Hotline" />
-            </div>
-            <div class="btn-text">
-              <span>HOTLINE HỖ TRỢ</span>
-              <strong>088 8868 025</strong>
-            </div>
-          </a>
-        </div>
       </nav>
     </header>
     <div class="breadcrumb-area">
@@ -85,91 +60,17 @@
         <nav class="breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span class="delimiter">/</span>
-          <span class="current">Shop</span>
+          <span id="breadcrumb-product-name">Chi tiết sản phẩm</span>
         </nav>
       </div>
     </div>
 
-    <div class="shop-container">
-      <aside class="sidebar">
-        <div class="sidebar-box">
-          <h3>Danh mục sản phẩm</h3>
-          <ul class="cat-list">
-            <li>
-              <a href="#" class="category-link active" data-category="all"
-                >Tất cả sản phẩm</a
-              >
-            </li>
-            <li>
-              <a href="#" class="category-link" data-category="bao-ho"
-                >Bảo hộ lao động</a
-              >
-            </li>
-            <li>
-              <a href="#" class="category-link" data-category="cong-so"
-                >Đồng phục công sở</a
-              >
-            </li>
-            <li>
-              <a href="#" class="category-link" data-category="cong-ty"
-                >Đồng phục công ty</a
-              >
-            </li>
-            <li>
-              <a href="#" class="category-link" data-category="hop-lop"
-                >Đồng phục họp lớp</a
-              >
-            </li>
-            <li>
-              <a href="#" class="category-link" data-category="tap-de"
-                >Tạp dề đồng phục</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="sidebar-box support-box">
-          <h3>Hỗ trợ tư vấn</h3>
-          <p><strong>Ms Quỳnh</strong></p>
-          <p class="phone-highlight">088 886 8025</p>
-          <p>Email: dqunisex@gmail.com</p>
-          <div class="support-btns">
-            <a href="https://zalo.me/0971067676" class="btn-zalo-sidebar"
-              >Nhắn qua Zalo</a
-            >
-            <a href="tel:0888868025" class="btn-call-sidebar">Gọi ngay</a>
-          </div>
-        </div>
-      </aside>
-
-      <main class="main-content">
-        <div class="shop-header">
-          <div class="filter-mobile-wrapper" onclick="toggleSidebar()">
-            <img src="image/filter.png" alt="filter" class="filter-icon-img" />
-            <span>Lọc</span>
-          </div>
-          <p id="product-count-text">Đang tải kết quả...</p>
-          <select class="sort-select">
-            <option value="newest">Mới nhất</option>
-            <option value="oldest">Cũ nhất</option>
-          </select>
-        </div>
-        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
-        <div class="product-grid" id="shop-product-grid"></div>
-
-        <div class="pagination-product">
-          <a href="#" class="page-item active">1</a>
-          <a href="#" class="page-item">2</a>
-          <a href="#" class="page-item">3</a>
-          <a href="#" class="page-item">4</a>
-          <span class="dots">...</span>
-          <a href="#" class="page-item">49</a>
-          <a href="#" class="page-item">50</a>
-          <a href="#" class="page-item">51</a>
-          <a href="#" class="page-item next-btn">&gt;</a>
-        </div>
-      </main>
-    </div>
+    <main
+      class="product-detail-section"
+      style="padding-top: 40px; min-height: 70vh; background-color: #f8fafc"
+    >
+      <div class="container" id="dynamic-product-detail"></div>
+    </main>
 
     <footer class="main-footer">
       <div class="footer-container">
@@ -284,11 +185,10 @@
         />
       </a>
     </div>
+
     <!--Linking SwipperJS-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="data.js"></script>
     <script src="detail.js"></script>
-    <script src="product.js"></script>
+    <script src="data.js"></script>
   </body>
 </html>

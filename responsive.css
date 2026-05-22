@@ -235,6 +235,13 @@
     font-size: 8px; /* Thu nhỏ cỡ chữ để không bị tràn dòng */
     padding: 12px 25px;
   }
+  .product-detail-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .btn-two-columns {
+        grid-template-columns: 1fr;
+    }
 }
 @media (max-width: 549px) {
     .bn-1 {

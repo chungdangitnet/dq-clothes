@@ -775,6 +775,12 @@ body {
     font-weight: bold; /* Chữ Shop in đậm như mẫu */
     color: #000;
 }
+.breadcrumb span, 
+#breadcrumb-product-name {
+  color: #000000 !important; /* Đen tuyền sắc nét */
+  font-weight: 700;          /* Kích chữ in đậm lên rõ rệt */
+  margin-left: 3px;          /* Thở nhẹ một khoảng cách với dấu gạch chéo */
+}
 .shop-header {
     display: flex;
     justify-content: space-between; /* Đẩy 2 bên về 2 đầu */
@@ -851,6 +857,19 @@ body {
     padding: 12px 15px; color: #333; text-decoration: none;
     border-bottom: 1px solid #f5f5f5; font-size: 14px;
 }
+/* Đảm bảo hiệu ứng chuyển màu mượt mà, không bị giật click */
+.cat-list li a, .category-link {
+  transition: all 0.2s ease-in-out;
+  display: block; /* Thổi bùng kích thước thẻ a bằng toàn bộ hàng */
+  width: 100%;
+}
+
+/* Hiệu ứng khi lướt chuột vào */
+.cat-list li a:hover, .category-link:hover {
+  color: #050A30 !important;       /* Chữ đổi sang màu xanh thương hiệu */
+  background-color: #f0f7ff;      /* Nền chuyển sang xanh dương siêu nhạt */
+  padding-left: 10px;             /* Tạo hiệu ứng dịch chữ nhẹ sang phải nhìn rất chuyên nghiệp */
+}
 
 /* Lưới sản phẩm 4 cột */
 .product-grid {
@@ -860,7 +879,20 @@ body {
     gap: 20px;
 }
 
-.product-card { text-align: left; }
+.product-card { 
+    text-align: left;
+    background: #ffffff;
+  border-radius: 8px; /* Bo góc đồng bộ với ảnh và nút bấm */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tạo chuyển động mượt mà khi di chuột vào/ra */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+ }
+ .product-card:hover {
+  transform: translateY(-4px); /* Nhấc nhẹ ô sản phẩm lên 4px tạo cảm giác nổi khối sinh động */
+  
+  /* Đổ bóng nhạt, mịn màng và sang trọng */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); 
+}
 .product-card img { 
     width: 100%; aspect-ratio: 3/4; object-fit: cover; 
     border-radius: 4px;
@@ -1170,4 +1202,270 @@ body {
   border-color: #0d3b85;     /* Đổi viền sang màu xanh */
   transform: scale(1.05);    /* Nút phóng to nhẹ lên một chút tạo độ nhạy */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/*Details*/
+/* --- Giao diện Chi tiết sản phẩm (UI 1.jpg) --- */
+.product-detail-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.detail-left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-image-box {
+    position: relative;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  overflow: hidden; /* Cắt phần ảnh thừa khi zoom */
+  background: #fff;
+  cursor: zoom-in;
+  
+}
+
+.main-image-box img {
+   width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease; /* Tạo hiệu ứng phóng to thu nhỏ mượt mà */
+  transform-origin: center center;
+}
+.main-image-box:hover img {
+  transform: scale(2);
+}
+
+/* Cột thông tin bên phải */
+.detail-right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-right-col h1 {
+    font-size: 26px;
+    color: #1e293b;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.detail-short-desc {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Các nút bấm hành động giống mẫu 1.jpg */
+.action-buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-large-blue {
+    background-color: #0076ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-sub-zalo {
+    background-color: #006cf0;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-sub-hotline {
+    background-color: #e62e3c;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.size-guide-link {
+    color: #00a3ad;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.size-guide-link:hover {
+    text-decoration: underline;
+}
+
+/* Khối thông tin tư vấn liên hệ cuối */
+.contact-info-block {
+    border-top: 1px dotted #cbd5e1;
+    padding-top: 20px;
+}
+
+.contact-info-block h3 {
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.info-list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.info-list-items span.highlight-red {
+    color: #e62e3c;
+    font-weight: 600;
+}
+/* --- CSS CHO KHỐI THÔNG TIN SẢN PHẨM LIÊN TỤC TỪ TRÊN XUỐNG --- */
+.product-info-sections-wrapper {
+  margin-top: 30px;
+}
+
+.info-content-block {
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  margin-bottom: 25px; /* Tạo khoảng cách đều giữa các mục từ trên xuống */
+}
+
+.info-content-block h2 {
+  font-size: 18px;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f5f9; /* Đường gạch chân nhẹ ngăn cách tiêu đề */
+  font-weight: 700;
+}
+
+.info-content-block p, .info-content-block li {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Định dạng bảng giá sạch sẽ */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.price-table th, .price-table td {
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.price-table th {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-weight: 600;
+}
+.size-image-box{
+    margin: 20px auto 0 auto; /* auto ở 2 bên sẽ tự động căn giữa khối */
+  max-width: 650px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+/* --- CSS LÀM ĐẸP THẺ SẢN PHẨM VÀ NÚT BẤM ĐỒNG BỘ --- */
+
+/* Loại bỏ gạch chân mặc định của link sản phẩm */
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Định dạng khối thông tin dưới ảnh */
+.product-info {
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* Định dạng tiêu đề chữ sản phẩm */
+.product-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  /* Giới hạn text tối đa 2 dòng, quá 2 dòng tự động thêm dấu ... */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 42px; 
+}
+
+/* KHỐI NÚT BẤM XỊN: Xóa bỏ hoàn toàn viền xấu, bo góc mượt mà */
+.btn-shop-contact {
+  width: 100%;
+  background-color: #08104c; /* Màu xanh chuẩn trang chi tiết */
+  color: #ffffff;
+  border: none; /* Xóa viền đen mặc định */
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 6px; /* Bo góc mượt */
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  pointer-events: none; /* Click xuyên qua nút ăn vào thẻ <a> để chuyển trang detail */
+}
+
+/* Hiệu ứng khi lướt chuột vào ô sản phẩm thì nút bấm sáng lên */
+.product-card:hover .btn-shop-contact {
+  background-color: #050A30; /* Xanh đậm hơn chút kích thích click */
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
