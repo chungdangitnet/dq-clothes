@@ -36,13 +36,16 @@ const swiper = new Swiper(".card-wrapper", {
     },
   },
 });
-const menuToggle = document.querySelector("#mobile-menu");
+// Bổ sung đoạn này vào file JS của trang chủ
+const mobileMenu = document.getElementById("mobile-menu");
 const navMenu = document.querySelector(".nav-menu");
 
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  menuToggle.classList.toggle("is-active"); // Để làm hiệu ứng dấu X cho nút
-});
+if (mobileMenu && navMenu) {
+  mobileMenu.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+    this.classList.toggle("is-active");
+  });
+}
 document.addEventListener("DOMContentLoaded", function () {
   const heroSwiper = new Swiper(".hero-slider", {
     loop: true,

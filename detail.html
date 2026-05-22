@@ -185,7 +185,21 @@
         />
       </a>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navMenu = document.querySelector(".nav-menu");
 
+        if (mobileMenu && navMenu) {
+          mobileMenu.addEventListener("click", function () {
+            navMenu.classList.toggle("active"); /* Bật/tắt menu */
+            this.classList.toggle(
+              "is-active",
+            ); /* Tạo hiệu ứng nút 3 gạch nếu có */
+          });
+        }
+      });
+    </script>
     <!--Linking SwipperJS-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="detail.js"></script>
