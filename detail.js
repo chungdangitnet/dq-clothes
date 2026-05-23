@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <a href="tel:0888868025" class="btn-large-blue">LIÊN HỆ NGAY 0888868025</a>
                             <div class="btn-two-columns">
                                 <a href="https://zalo.me/0971067676" target="_blank" class="btn-sub-zalo">📞 Liên Hệ Qua Zalo</a>
-                                <a href="tel:0888868025" class="btn-sub-hotline">Liên Hệ Ngay</a>
+                                <a href="https://www.facebook.com/messages/t/61557919410699" class="btn-sub-hotline">Nhắn Messenger</a>
                             </div>
                         </div>
                         <a href="#" class="size-guide-link">Hướng dẫn chọn size</a>
