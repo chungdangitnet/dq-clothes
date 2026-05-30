@@ -21,11 +21,13 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
+/* Nút Hamburger (Mặc định ẩn trên PC) */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    z-index: 1001;
 }
 
 .menu-toggle .bar {
@@ -74,14 +76,6 @@ body {
     opacity: 0.8;
 }
 
-/* Nút Hamburger (Mặc định ẩn trên PC) */
-.menu-toggle {
-    display: none; 
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    z-index: 1001;
-}
 
 /* --- Thanh tìm kiếm viên thuốc --- */
 .search-container {
@@ -399,7 +393,6 @@ body {
     transform: scale(1.08);
 }
 
-/* Responsive: Trên điện thoại chỉ hiện 1-2 cột */
 
 /* Section Về chúng tôi */
 .about-us {
@@ -1468,4 +1461,80 @@ body {
 .product-card:hover .btn-shop-contact {
   background-color: #050A30; /* Xanh đậm hơn chút kích thích click */
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+/* Khung chứa nút gạt ngôn ngữ */
+.lang-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.lang-label {
+  color: #334155;
+}
+
+/* Cấu trúc core của Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+/* Ẩn checkbox mặc định đi */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Phần nền của nút gạt */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: .4s;
+}
+
+/* Nút tròn di chuyển phía trong */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+/* Khi người dùng tích chọn (Gạt sang ENG) */
+input:checked + .slider {
+  background-color: #2563eb; /* Màu xanh thương hiệu của bạn */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2563eb;
+}
+
+/* Dịch chuyển nút tròn sang phải */
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Bo tròn nút gạt */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

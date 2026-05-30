@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const shopGrid = document.getElementById("shop-product-grid");
   const paginationContainer = document.querySelector(".pagination-product");
   const categoryLinks = document.querySelectorAll(".category-link");
-  const sortSelect = document.querySelector(".sort-select"); // Định vị khung chọn bộ lọc mới/cũ
+  const sortSelect = document.querySelector(".sort-select"); // Khung chọn bộ lọc Mới nhất / Cũ nhất
 
   // CẤU HÌNH PHÂN TRANG VÀ BỘ LỌC
   const productsPerPage = 12;
   let currentPage = 1;
-  let baseOldProducts = []; // Khối sản phẩm gốc (chỉ chứa type: "old")
-  let filteredProducts = []; // Khối sản phẩm thực tế hiển thị sau khi Lọc & Sắp xếp
+  let baseAllProducts = []; // Lưu trữ toàn bộ sản phẩm gốc (Cả new và old)
+  let filteredProducts = []; // Khối sản phẩm hiển thị thực tế sau khi Lọc & Sắp xếp
 
   let currentCategory = "all"; // Lưu trạng thái danh mục hiện tại
   let currentSort = "newest"; // Lưu trạng thái sắp xếp hiện tại ("newest" hoặc "oldest")
 
   // 1. Kiểm tra kho dữ liệu và tiến hành khởi tạo ban đầu
   if (typeof products !== "undefined" && shopGrid) {
-    // Bước lọc cốt lõi: Chỉ lấy các sản phẩm có type là "old"
-    baseOldProducts = products.filter((product) => product.type === "old");
+    // Đã sửa: Lấy toàn bộ sản phẩm từ data.js thay vì chỉ lọc "old"
+    baseAllProducts = [...products];
 
     // Chạy bộ lọc và sắp xếp mặc định lần đầu tiên
     filterAndSortProducts(currentCategory, currentSort);
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Kích hoạt bộ lắng nghe sự kiện Click chọn danh mục Sidebar
     setupCategoryFilter();
 
-    // Kích hoạt bộ lắng nghe sự kiện Thay đổi kiểu sắp xếp (Mới nhất / Cũ nhất)
+    // Kích hoạt bộ lắng nghe sự kiện Thay đổi kiểu sắp xếp
     setupSortFilter();
   }
 
@@ -35,16 +35,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Bước A: Lọc theo danh mục trước
     if (category === "all" || !category) {
-      filteredProducts = [...baseOldProducts]; // Lấy toàn bộ sản phẩm gốc ban đầu
+      filteredProducts = [...baseAllProducts]; // Lấy toàn bộ kho hàng
     } else {
-      filteredProducts = baseOldProducts.filter(
+      // Vì sản phẩm mới chưa được gán thuộc tính category, ta ưu tiên lọc theo sản phẩm cũ có category khớp,
+      // hoặc nếu bạn muốn quy ước gì thêm có thể mở rộng tại đây.
+      filteredProducts = baseAllProducts.filter(
         (product) => product.category === category,
       );
     }
 
-    // Bước B: Sắp xếp theo yêu cầu (Mới nhất giữ nguyên, Cũ nhất đảo ngược mảng)
-    if (sortOrder === "oldest") {
-      filteredProducts.reverse(); // Đảo ngược mảng để đưa các sản phẩm cuối cùng lên trang 1
+    // Bước B: Sắp xếp theo yêu cầu (Thông minh & Đầy đủ hơn)
+    if (sortOrder === "newest") {
+      // Đưa sản phẩm có type: "new" lên đầu danh sách, sản phẩm "old" xuống sau
+      filteredProducts.sort((a, b) => {
+        if (a.type === "new" && b.type !== "new") return -1;
+        if (a.type !== "new" && b.type === "new") return 1;
+        return 0; // Giữ nguyên thứ tự gốc nếu cùng loại
+      });
+    } else if (sortOrder === "oldest") {
+      // Đảo ngược lại: Đưa sản phẩm "old" lên trước, sản phẩm "new" xuống cuối cùng
+      filteredProducts.sort((a, b) => {
+        if (a.type === "old" && b.type !== "old") return -1;
+        if (a.type !== "old" && b.type === "old") return 1;
+        return 0;
+      });
     }
 
     // Bước C: Reset về trang 1 và render lại giao diện mới
@@ -56,6 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
     currentPage = page;
     let htmlContent = "";
 
+    // 🌟 LẤY NGÔN NGỮ HIỆN TẠI ĐỂ ĐỌC DỮ LIỆU ĐA NGÔN NGỮ
+    const currentLang = localStorage.getItem("language") || "vi";
+
     const startIndex = (page - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
@@ -65,45 +82,64 @@ document.addEventListener("DOMContentLoaded", function () {
     if (countTextElement) {
       const totalResults = filteredProducts.length;
       if (totalResults === 0) {
-        countTextElement.innerText = "Hiển thị 0 kết quả";
+        countTextElement.innerText =
+          currentLang === "vi" ? "Hiển thị 0 kết quả" : "Showing 0 results";
       } else {
         const fromCount = startIndex + 1;
         const toCount = Math.min(
           startIndex + paginatedProducts.length,
           totalResults,
         );
-        countTextElement.innerText = `Hiển thị ${fromCount}–${toCount} của ${totalResults} kết quả`;
+        if (currentLang === "vi") {
+          countTextElement.innerText = `Hiển thị ${fromCount}–${toCount} của ${totalResults} kết quả`;
+        } else {
+          countTextElement.innerText = `Showing ${fromCount}–${toCount} of ${totalResults} results`;
+        }
       }
     }
 
     // Nếu không tìm thấy sản phẩm nào
     if (filteredProducts.length === 0) {
-      shopGrid.innerHTML = `<p style="text-align: center; grid-column: 1/-1; color: #64748b; padding: 40px 0;">Hiện tại chưa có sản phẩm nào trong danh mục này.</p>`;
+      const emptyMsg =
+        currentLang === "vi"
+          ? "Hiện tại chưa có sản phẩm nào trong danh mục này."
+          : "No products found in this category.";
+      shopGrid.innerHTML = `<p style="text-align: center; grid-column: 1/-1; color: #64748b; padding: 40px 0;">${emptyMsg}</p>`;
       if (paginationContainer) paginationContainer.innerHTML = "";
       return;
     }
 
     // Duyệt qua danh sách sản phẩm để render HTML
     paginatedProducts.forEach((product) => {
+      // Kiểm tra để hiển thị Badge "MỚI" nếu sản phẩm có type là new
+      const newBadge =
+        product.type === "new"
+          ? `<span style="position: absolute; top: 10px; left: 10px; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; z-index: 2;">NEW</span>`
+          : "";
+
+      const btnText = currentLang === "vi" ? "LIÊN HỆ NGAY" : "CONTACT NOW";
+
+      // 🌟 ĐÃ ĐỔI: product.name -> product.name[currentLang]
       htmlContent += `
-    <div class="product-card">
+        <div class="product-card" style="position: relative;">
+          ${newBadge}
           <a href="detail.html?id=${product.id}" class="product-card-link">
             <div class="product-img-box">
-              <img src="${product.image}" alt="${product.name}" />
+              <img src="${product.image}" alt="${product.name[currentLang]}" />
             </div>
             
             <div class="product-info">
               <h4 class="product-card-title">
-                ${product.name}
+                ${product.name[currentLang]}
               </h4>
               
               <button class="btn-shop-contact">
-                LIÊN HỆ NGAY
+                ${btnText}
               </button>
             </div>
           </a>
         </div>
-  `;
+      `;
     });
 
     shopGrid.innerHTML = htmlContent;
@@ -111,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Dựng lại các nút số trang tương ứng
     setupPagination();
 
-    // Thực hiện cuộn màn hình xuống vừa tầm mắt (có trừ offset khoảng trống phía trên)
+    // Thực hiện cuộn màn hình xuống vừa tầm mắt
     const shopHeader = document.querySelector(".shop-header");
     const targetElement = shopHeader || shopGrid;
     if (targetElement) {
@@ -168,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const selectedCategory = this.getAttribute("data-category");
 
-        // Gọi hàm trung gian để lọc lại danh mục nhưng vẫn giữ nguyên kiểu sắp xếp (Mới nhất/Cũ nhất) đang chọn
+        // Lọc danh mục mới đồng thời giữ nguyên bộ lọc sắp xếp hiện tại
         filterAndSortProducts(selectedCategory, currentSort);
 
         // Tự động đóng sidebar menu trên giao diện mobile
@@ -187,14 +223,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!sortSelect) return;
 
     sortSelect.addEventListener("change", function () {
-      const selectedSort = this.value; // Lấy giá trị "newest" hoặc "oldest"
-
-      // Gọi hàm trung gian để sắp xếp lại danh sách dựa trên danh mục hiện tại đang xem
+      const selectedSort = this.value;
       filterAndSortProducts(currentCategory, selectedSort);
     });
   }
 
-  // Logic xử lý Menu Mobile (NÚT BA GẠCH) - GIỮ NGUYÊN CỦA BẠN
+  // Logic xử lý Menu Mobile (NÚT BA GẠCH)
   const mobileMenu = document.getElementById("mobile-menu");
   const navMenu = document.querySelector(".nav-menu");
   if (mobileMenu && navMenu) {
@@ -204,13 +238,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-// Hàm hỗ trợ bật tắt thanh lọc danh mục trên thiết bị di động - GIỮ NGUYÊN CỦA BẠN
-function toggleSidebar() {
-  const sidebar = document.querySelector(".sidebar");
-  const overlay = document.querySelector(".sidebar-overlay");
-  if (sidebar && overlay) {
-    sidebar.classList.toggle("active");
-    overlay.classList.toggle("active");
-  }
-}

@@ -8,10 +8,24 @@
       content="DQ Uniform chuyên may đo đồng phục công ty, áo thun đội nhóm cho teambuilding, bảo hộ lao động chất lượng cao. Thiết kế miễn phí, mẫu mã đa dạng, giao hàng đúng hẹn."
     />
     <link rel="icon" type="image/x-icon" href="image/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="image/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="image/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="image/apple-touch-icon.png"
+    />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"
@@ -24,40 +38,6 @@
     <link rel="stylesheet" href="responsive.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <div class="hero-actions">
-    <a
-      href="https://zalo.me/0971067676"
-      class="action-btn zalo-btn"
-      target="_blank"
-    >
-      <div class="btn-icon">
-        <img src="image/icons8-zalo-480.png" alt="Zalo" />
-      </div>
-      <div class="btn-text">
-        <span>TƯ VẤN QUA</span>
-        <strong>ZALO</strong>
-      </div>
-    </a>
-
-    <a href="tel:0888868025" class="action-btn hotline-btn">
-      <div class="btn-icon">
-        <img src="image/phone-call.png" alt="Hotline" />
-      </div>
-      <div class="btn-text">
-        <span>HOTLINE HỖ TRỢ</span>
-        <strong>088 8868 025</strong>
-      </div>
-    </a>
-  </div>
-  <div class="breadcrumb-area">
-    <div class="container">
-      <nav class="breadcrumb">
-        <a href="index.html">Trang chủ</a>
-        <span class="delimiter">/</span>
-        <span class="current">Tin tức thời trang DQ</span>
-      </nav>
-    </div>
-  </div>
   <body>
     <header class="main-header">
       <nav class="navbar">
@@ -68,16 +48,23 @@
         </div>
 
         <ul class="nav-menu">
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="products.html">Sản phẩm</a></li>
-          <li><a href="news.html">Tin Tức</a></li>
+          <li><a href="index.html" data-i18n="navHome">Trang chủ</a></li>
+          <li><a href="products.html" data-i18n="navProducts">Sản phẩm</a></li>
+          <li><a href="news.html" data-i18n="navNews">Tin Tức</a></li>
         </ul>
 
         <div class="search-box">
           <div class="search-container">
             <img src="image/search.png" class="search-icon" alt="search" />
-            <input type="text" placeholder="Tìm kiếm" class="search-input" />
-            <button type="submit" class="search-btn">Tìm kiếm</button>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="search-input"
+              data-i18n-placeholder="searchPlaceholder"
+            />
+            <button type="submit" class="search-btn" data-i18n="searchBtn">
+              Tìm kiếm
+            </button>
           </div>
         </div>
 
@@ -86,9 +73,18 @@
             <img src="image/telephone 1.png" alt="Hotline Icon" />
           </div>
           <div class="hotline-text">
-            <span class="text-top">Tư vấn ngay</span>
+            <span class="text-top" data-i18n="hotlineTop">Tư vấn ngay</span>
             <span class="phone-number">0888868025</span>
           </div>
+        </div>
+
+        <div class="lang-switch-wrapper">
+          <span class="lang-label">VIE</span>
+          <label class="switch">
+            <input type="checkbox" id="lang-toggle" />
+            <span class="slider round"></span>
+          </label>
+          <span class="lang-label">ENG</span>
         </div>
 
         <div class="menu-toggle" id="mobile-menu">
@@ -98,12 +94,24 @@
         </div>
       </nav>
     </header>
+
+    <div class="breadcrumb-area">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="index.html" data-i18n="navHome">Trang chủ</a>
+          <span class="delimiter">/</span>
+          <span class="current" data-i18n="breadcrumbNews"
+            >Tin tức thời trang DQ</span
+          >
+        </nav>
+      </div>
+    </div>
+
     <main class="news-container">
-      <!-- Section 1: Page Header -->
       <section class="news-intro">
         <div class="container">
-          <h1>TIN TỨC THỜI TRANG DQ UNIFORM</h1>
-          <p>
+          <h1 data-i18n="newsIntroTitle">TIN TỨC THỜI TRANG DQ UNIFORM</h1>
+          <p data-i18n="newsIntroDesc">
             Chuyên mục tin tức mới nhất thời trang DQ Uniform sẽ đem đến kho dữ
             liệu vô cùng lớn cho khách hàng khi tham khảo những mẫu áo, quần đẹp
             và bắt trend.
@@ -115,7 +123,9 @@
         <div class="container">
           <div class="row">
             <div class="col-main">
-              <h2 class="section-title">Bài viết nổi bật</h2>
+              <h2 class="section-title" data-i18n="newsTitleFeatured">
+                Bài viết nổi bật
+              </h2>
               <div class="featured-post">
                 <div class="post-thumb">
                   <img
@@ -124,11 +134,11 @@
                   />
                 </div>
                 <div class="post-info">
-                  <h3>
+                  <h3 data-i18n="fPostTitle">
                     Tổng Hợp 100+ Mẫu Đồng Phục Ngân Hàng Đẹp, Chuyên Nghiệp
                   </h3>
                   <span class="post-date">20/09/2024</span>
-                  <p>
+                  <p data-i18n="fPostDesc">
                     Đồng phục ngân hàng là một yếu tố quan trọng giúp các ngân
                     hàng tăng độ nhận diện thương hiệu. Một bộ đồng phục ngân
                     hàng đẹp mắt và chỉn chu sẽ giúp các nhân viên xây dựng hình
@@ -139,7 +149,9 @@
             </div>
 
             <div class="col-sidebar">
-              <h2 class="section-title">Xem nhiều nhất</h2>
+              <h2 class="section-title" data-i18n="newsTitleMostViewed">
+                Xem nhiều nhất
+              </h2>
               <div class="side-post-list">
                 <div class="side-post-item">
                   <img
@@ -147,7 +159,7 @@
                     alt="feedback"
                   />
                   <div class="side-post-info">
-                    <h4>
+                    <h4 data-i18n="sidePostTitle1">
                       Feedback Đồng Phục Canon: Đánh Dấu Cột Mốc 25 Năm Hoạt
                       Động
                     </h4>
@@ -160,7 +172,7 @@
                     alt="nha may"
                   />
                   <div class="side-post-info">
-                    <h4>
+                    <h4 data-i18n="sidePostTitle2">
                       Nhà Máy May Hải Anh Tại Hà Trung (Thanh Hóa) Chính Thức Đi
                       Vào Hoạt Động
                     </h4>
@@ -173,7 +185,7 @@
                     alt="feedback"
                   />
                   <div class="side-post-info">
-                    <h4>
+                    <h4 data-i18n="sidePostTitle3">
                       100+ Mẫu Áo Đồng Phục Team Building Du Lịch Đẹp Và Sáng
                       Tạo
                     </h4>
@@ -186,8 +198,8 @@
                     alt="feedback"
                   />
                   <div class="side-post-info">
-                    <h4>
-                      Đồng Phục Trường Tiểu Học Trung Yên Nổi Bật Với Tone Cam
+                    <h4 data-i18n="sidePostTitle4">
+                      Đồng Phục Trường Tiểu Học Trung Yen Nổi Bật Với Tone Cam
                     </h4>
                     <span class="post-date">07/01/2026</span>
                   </div>
@@ -198,7 +210,9 @@
                     alt="feedback"
                   />
                   <div class="side-post-info">
-                    <h4>40+ Mẫu Áo Đồng Phục Màu Đỏ Đẹp, Nổi Bật Và Thu Hút</h4>
+                    <h4 data-i18n="sidePostTitle5">
+                      40+ Mẫu Áo Đồng Phục Màu Đỏ Đẹp, Nổi Bật Và Thu Hút
+                    </h4>
                     <span class="post-date">09/01/2026</span>
                   </div>
                 </div>
@@ -208,124 +222,101 @@
         </div>
       </section>
 
-      <!-- Section 3: Latest News Grid -->
       <section class="latest-section container">
-        <h2 class="section-title">Bài viết mới</h2>
+        <h2 class="section-title" data-i18n="newsTitleLatest">Bài viết mới</h2>
         <div class="news-grid">
-          <!-- Card 1 -->
           <div class="news-card">
             <img
               src="image/news/feedback-canon-viet-nam-cover-711x400.png"
               alt="News"
             />
             <div class="news-card-body">
-              <h4>
+              <h4 data-i18n="sidePostTitle1">
                 Feedback Đồng Phục Canon: Đánh Dấu Cột Mốc 25 Năm Hoạt Động
               </h4>
-              <p>
+              <p data-i18n="gridPostDesc1">
                 Đại kỷ niệm 25 năm thành lập, Công đoàn Canon Việt Nam đã lựa
                 chọn...
               </p>
             </div>
           </div>
-          <!-- Card 2 -->
           <div class="news-card">
             <img
               src="image/news/xuong-san-xuat-ha-trung-thanh-hoa-dong-phuc-hai-anh-711x400.png"
               alt="News"
             />
             <div class="news-card-body">
-              <h4>
-                Nhà Máy May Hải Anh Tại Hà Trung (Thanh Hóa) Chính Thức Đi Vào
-                Hoạt Động
+              <h4 data-i18n="sidePostTitle2">
+                Nhà Máy May Hải Anh Tại Hà Trung (Thanh Hóa) Chính Thức Vào Hoạt
+                Động
               </h4>
-              <p>
+              <p data-i18n="gridPostDesc2">
                 Với định hướng mở rộng quy mô sản xuất và đáp ứng tốt hơn nhu...
               </p>
             </div>
           </div>
-          <!-- Card 3 -->
-          <div class="news-card">
-            <img
-              src="image/news/dong-phuc-mau-do-anh-cover-711x400.jpg"
-              alt="News"
-            />
-            <div class="news-card-body">
-              <h4>
-                100+ Mẫu Áo Đồng Phục Team Building Du Lịch Đẹp Và Sáng Tạo
-              </h4>
-              <p>
-                Áo đồng phục Team Building hiện đang là xu hướng được nhiều
-                doanh nghiệp, công...
-              </p>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div class="news-card">
-            <img
-              src="image/news/dong-phuc-truong-tieu-hoc-trung-yen-dong-phuc-hai-anh-762x400.jpg"
-              alt="News"
-            />
-            <div class="news-card-body">
-              <h4>
-                40+ Mẫu Áo Đồng Phục Màu Đỏ Đẹp, Nổi Bật Và Thu Hút
-              <p>
-                Với định hướng mở rộng quy mô sản xuất và đáp ứng tốt hơn nhu...
-              </p>
-            </div>
-          </div>
-          <!-- Card 5 -->
-          <div class="news-card">
-            <img
-              src="image/news/ao-so-mi-dong-phuc-techcombank-600x400.jpg"
-              alt="News"
-            />
-            <div class="news-card-body">
-              <h4>
-                Nhà Máy May Hải Anh Tại Hà Trung (Thanh Hóa) Chính Thức Đi Vào
-                Hoạt Động
-              </h4>
-              <p>
-                Với định hướng mở rộng quy mô sản xuất và đáp ứng tốt hơn nhu...
-              </p>
-            </div>
-          </div>
-          <!-- Card 6 -->
           <div class="news-card">
             <img
               src="image/news/dong-phuc-team-building-gan-ket-tinh-than-dong-doi-1-711x400.jpg"
               alt="News"
             />
             <div class="news-card-body">
-              <h4>
-                Nhà Máy May Hải Anh Tại Hà Trung (Thanh Hóa) Chính Thức Đi Vào
-                Hoạt Động
+              <h4 data-i18n="sidePostTitle3">
+                100+ Mẫu Áo Đồng Phục Team Building Du Lịch Đẹp Và Sáng Tạo
               </h4>
-              <p>
-                Với định hướng mở rộng quy mô sản xuất và đáp ứng tốt hơn nhu...
+              <p data-i18n="gridPostDesc3">
+                Áo đồng phục Team Building hiện đang là xu hướng được nhiều
+                doanh nghiệp...
               </p>
             </div>
           </div>
-          <!-- Card 7 -->
+          <div class="news-card">
+            <img
+              src="image/news/dong-phuc-mau-do-anh-cover-711x400.jpg"
+              alt="News"
+            />
+            <div class="news-card-body">
+              <h4 data-i18n="sidePostTitle5">
+                40+ Mẫu Áo Đồng Phục Màu Đỏ Đẹp, Nổi Bật Và Thu Hút
+              </h4>
+              <p data-i18n="gridPostDesc4">
+                Khám phá các thiết kế áo đồng phục sắc đỏ rực rỡ mang lại năng
+                lượng tích cực...
+              </p>
+            </div>
+          </div>
           <div class="news-card">
             <img
               src="image/news/ao-so-mi-dong-phuc-techcombank-600x400.jpg"
               alt="News"
             />
             <div class="news-card-body">
-              <h4>
-                Nhà Máy May Hải Anh Tại Hà Trung (Thanh Hóa) Chính Thức Đi Vào
-                Hoạt Động
+              <h4 data-i18n="gridPostTitle5">
+                Bí Quyết Chọn Vải May Áo Sơ Mi Đồng Phục Công Sở Không Nhăn
               </h4>
-              <p>
-                Với định hướng mở rộng quy mô sản xuất và đáp ứng tốt hơn nhu...
+              <p data-i18n="gridPostDesc5">
+                Lựa chọn chất liệu vải phù hợp giúp giữ form dáng áo sơ mi công
+                sở luôn phẳng phiu...
               </p>
             </div>
           </div>
-          <!-- Lặp lại các news-card tương tự hình ảnh của bạn (3 cột x 4 hàng) -->
+          <div class="news-card">
+            <img
+              src="image/news/dong-phuc-truong-tieu-hoc-trung-yen-dong-phuc-hai-anh-762x400.jpg"
+              alt="News"
+            />
+            <div class="news-card-body">
+              <h4 data-i18n="gridPostTitle6">
+                Xu Hướng Thiết Kế Đồng Phục Học Sinh Tiểu Học Mới Nhất
+              </h4>
+              <p data-i18n="gridPostDesc6">
+                Điểm qua những thay đổi lớn trong phong cách thiết kế đồng phục
+                học đường năm nay...
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- Pagination -->
         <div class="pagination-product">
           <a href="#" class="page-item active">1</a>
           <a href="#" class="page-item">2</a>
@@ -337,6 +328,7 @@
         </div>
       </section>
     </main>
+
     <footer class="main-footer">
       <div class="footer-container">
         <div class="footer-top">
@@ -344,7 +336,9 @@
             <img src="image/logo.png" alt="DQ Uniform Logo" />
           </div>
           <div class="footer-newsletter">
-            <p>Cập nhật thiết kế mới, ưu đãi độc quyền!</p>
+            <p data-i18n="newsletterText">
+              Cập nhật thiết kế mới, ưu đãi độc quyền!
+            </p>
             <div class="newsletter-form">
               <input type="email" placeholder="Email Address" />
               <button type="submit">
@@ -358,55 +352,73 @@
 
         <div class="footer-content">
           <div class="footer-col">
-            <h3>Thông tin liên hệ</h3>
+            <h3 data-i18n="ftColContact">Thông tin liên hệ</h3>
             <ul>
               <li>
-                <img src="image/location.png" class="footer-icon" /> Hồ Chí
-                Minh: 176/6m Đường Ấp Đông 1-2, Đông Thạnh, Hồ Chí Minh
+                <img src="image/location.png" class="footer-icon" />
+                Hồ Chí Minh: 176/6m Đường Ấp Đông 1-2, Đông Thạnh, Hồ Chí Minh
               </li>
-              <li>
-                <img src="image/telephone 1.png" class="footer-icon" /> Điện
-                thoại: 0888868025
+              <li data-i18n="ftPhone">
+                <img src="image/telephone 1.png" class="footer-icon" /> Phone:
+                0888868025
               </li>
               <li>
                 <img src="image/mail.png" class="footer-icon" /> Email:
                 dqunisex@gmail.com
               </li>
-              <li>
-                <img src="image/clock.png" class="footer-icon" /> Thời gian làm
-                việc: T2 - T6: 08:00 - 20:00
+              <li data-i18n="ftWorkTime">
+                <img src="image/clock.png" class="footer-icon" /> Working time:
+                T2 - T6: 08:00 - 20:00
               </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3>Liên kết nhanh</h3>
+            <h3 data-i18n="ftColQuickLinks">Liên kết nhanh</h3>
             <ul>
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Sản phẩm</a></li>
-              <li><a href="#">Liên hệ</a></li>
+              <li><a href="index.html" data-i18n="navHome">Trang chủ</a></li>
+              <li>
+                <a href="products.html" data-i18n="navProducts">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="tel:0888868025" data-i18n="ftContactLink">Liên hệ</a>
+              </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3>Thông tin hướng dẫn</h3>
+            <h3 data-i18n="ftColGuides">Thông tin hướng dẫn</h3>
             <ul>
-              <li><a href="#">Hướng dẫn thanh toán</a></li>
-              <li><a href="#">Hướng dẫn chọn size</a></li>
-              <li><a href="#">Hướng dẫn đặt hàng</a></li>
-              <li><a href="#">Chính sách bảo hành hoàn tiền</a></li>
-              <li><a href="#">Chính sách mua hàng</a></li>
-              <li><a href="#">Chính sách giao hàng</a></li>
+              <li><a href="#" data-i18n="gPayment">Hướng dẫn thanh toán</a></li>
+              <li><a href="#" data-i18n="gSize">Hướng dẫn chọn size</a></li>
+              <li><a href="#" data-i18n="gOrder">Hướng dẫn đặt hàng</a></li>
+              <li>
+                <a href="#" data-i18n="gWarranty"
+                  >Chính sách bảo hành hoàn tiền</a
+                >
+              </li>
+              <li><a href="#" data-i18n="gPurchase">Chính sách mua hàng</a></li>
+              <li>
+                <a href="#" data-i18n="gDelivery">Chính sách giao hàng</a>
+              </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3>Danh mục sản phẩm</h3>
+            <h3 data-i18n="ftColCat">Danh mục sản phẩm</h3>
             <ul>
-              <li><a href="#">Đồng phục áo thun</a></li>
-              <li><a href="#">Đồng phục công sở</a></li>
-              <li><a href="#">Đồng phục nhà hàng</a></li>
-              <li><a href="#">Đồng phục học sinh</a></li>
+              <li><a href="#" data-i18n="catSport">Đồng phục thể thao</a></li>
+              <li>
+                <a href="#" data-i18n="catConstruction">Đồng phục công trình</a>
+              </li>
+              <li>
+                <a href="#" data-i18n="catCompany">Đồng phục công ty</a>
+              </li>
+              <li>
+                <a href="#" data-i18n="catTeamBuilding"
+                  >Đồng phục Team Building</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -421,10 +433,11 @@
             <a href="#">Sitemap Pages</a>
             <a href="#">Sitemap Products</a>
           </div>
-          <p class="copyright">© 2023 All Rights Reserved</p>
+          <p class="copyright">© 2025 All Rights Reserved</p>
         </div>
       </div>
     </footer>
+
     <div class="floating-contact">
       <a
         href="https://zalo.me/0971067676"
@@ -433,12 +446,10 @@
       >
         <img src="image/icons8-zalo-480.png" alt="Zalo" />
       </a>
-
       <a href="tel:0888868025" class="contact-icon phone">
         <div class="phone-ring"></div>
         <img src="image/phone-call.png" alt="Phone" />
       </a>
-
       <a
         href="https://www.facebook.com/messages/t/61557919410699"
         target="_blank"
@@ -450,21 +461,24 @@
         />
       </a>
     </div>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navMenu = document.querySelector(".nav-menu");
 
-    if (mobileMenu && navMenu) {
-      mobileMenu.addEventListener("click", function () {
-        navMenu.classList.toggle("active");     /* Bật/tắt menu */
-        this.classList.toggle("is-active");     /* Tạo hiệu ứng nút 3 gạch nếu có */
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        if (mobileMenu && navMenu) {
+          mobileMenu.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            this.classList.toggle("is-active");
+          });
+        }
       });
-    }
-  });
-</script>
-    <!--Linking SwipperJS-->
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="data.js"></script>
+    <script src="lang.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -48,16 +48,23 @@
         </div>
 
         <ul class="nav-menu">
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="products.html">Sản phẩm</a></li>
-          <li><a href="news.html">Tin tức</a></li>
+          <li><a href="index.html" data-i18n="navHome">Trang chủ</a></li>
+          <li><a href="products.html" data-i18n="navProducts">Sản phẩm</a></li>
+          <li><a href="news.html" data-i18n="navNews">Tin Tức</a></li>
         </ul>
 
         <div class="search-box">
           <div class="search-container">
             <img src="image/search.png" class="search-icon" alt="search" />
-            <input type="text" placeholder="Tìm kiếm" class="search-input" />
-            <button type="submit" class="search-btn">Tìm kiếm</button>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="search-input"
+              data-i18n-placeholder="searchPlaceholder"
+            />
+            <button type="submit" class="search-btn" data-i18n="searchBtn">
+              Tìm kiếm
+            </button>
           </div>
         </div>
 
@@ -66,9 +73,18 @@
             <img src="image/telephone 1.png" alt="Hotline Icon" />
           </div>
           <div class="hotline-text">
-            <span class="text-top">Tư vấn ngay</span>
+            <span class="text-top" data-i18n="hotlineTop">Tư vấn ngay</span>
             <span class="phone-number">0888868025</span>
           </div>
+        </div>
+
+        <div class="lang-switch-wrapper">
+          <span class="lang-label">VIE</span>
+          <label class="switch">
+            <input type="checkbox" id="lang-toggle" />
+            <span class="slider round"></span>
+          </label>
+          <span class="lang-label">ENG</span>
         </div>
 
         <div class="menu-toggle" id="mobile-menu">
@@ -76,39 +92,14 @@
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
-        <div class="hero-actions">
-          <a
-            href="https://zalo.me/0971067676"
-            class="action-btn zalo-btn"
-            target="_blank"
-          >
-            <div class="btn-icon">
-              <img src="image/icons8-zalo-480.png" alt="Zalo" />
-            </div>
-            <div class="btn-text">
-              <span>TƯ VẤN QUA</span>
-              <strong>ZALO</strong>
-            </div>
-          </a>
-
-          <a href="tel:0888868025" class="action-btn hotline-btn">
-            <div class="btn-icon">
-              <img src="image/phone-call.png" alt="Hotline" />
-            </div>
-            <div class="btn-text">
-              <span>HOTLINE HỖ TRỢ</span>
-              <strong>088 8868 025</strong>
-            </div>
-          </a>
-        </div>
       </nav>
     </header>
     <div class="breadcrumb-area">
       <div class="container">
         <nav class="breadcrumb">
-          <a href="index.html">Trang chủ</a>
+          <a href="index.html" data-i18n="navHome">Trang chủ</a>
           <span class="delimiter">/</span>
-          <span class="current">Shop</span>
+          <span class="current" data-i18n="breadcrumbShop">Shop</span>
         </nav>
       </div>
     </div>
@@ -116,40 +107,68 @@
     <div class="shop-container">
       <aside class="sidebar">
         <div class="sidebar-box">
-          <h3>Danh mục sản phẩm</h3>
+          <h3 data-i18n="titleCategories">Danh mục sản phẩm</h3>
           <ul class="cat-list">
             <li>
-              <a href="#" class="category-link active" data-category="all"
+              <a
+                href="#"
+                class="category-link active"
+                data-category="all"
+                data-i18n="catAll"
                 >Tất cả sản phẩm</a
               >
             </li>
             <li>
-              <a href="#" class="category-link" data-category="bao-ho"
+              <a
+                href="#"
+                class="category-link"
+                data-category="bao-ho"
+                data-i18n="catConstruction"
                 >Bảo hộ lao động</a
               >
             </li>
             <li>
-              <a href="#" class="category-link" data-category="team-building"
+              <a
+                href="#"
+                class="category-link"
+                data-category="team-building"
+                data-i18n="catTeamBuilding"
                 >Đồng phục team building</a
               >
             </li>
             <li>
-              <a href="#" class="category-link" data-category="cong-ty"
+              <a
+                href="#"
+                class="category-link"
+                data-category="cong-ty"
+                data-i18n="catCompany"
                 >Đồng phục công ty</a
               >
             </li>
             <li>
-              <a href="#" class="category-link" data-category="hop-lop"
+              <a
+                href="#"
+                class="category-link"
+                data-category="hop-lop"
+                data-i18n="catHopLop"
                 >Đồng phục họp lớp</a
               >
             </li>
             <li>
-              <a href="#" class="category-link" data-category="tap-de"
+              <a
+                href="#"
+                class="category-link"
+                data-category="tap-de"
+                data-i18n="catApron"
                 >Tạp dề đồng phục</a
               >
             </li>
             <li>
-              <a href="#" class="category-link" data-category="the-thao"
+              <a
+                href="#"
+                class="category-link"
+                data-category="the-thao"
+                data-i18n="catSport"
                 >Đồng phục thể thao</a
               >
             </li>
@@ -157,15 +176,23 @@
         </div>
 
         <div class="sidebar-box support-box">
-          <h3>Hỗ trợ tư vấn</h3>
+          <h3 data-i18n="sidebarTitleSupport">Hỗ trợ tư vấn</h3>
           <p><strong>Ms Quỳnh</strong></p>
           <p class="phone-highlight">088 886 8025</p>
           <p>Email: dqunisex@gmail.com</p>
           <div class="support-btns">
-            <a href="https://zalo.me/0971067676" class="btn-zalo-sidebar"
+            <a
+              href="https://zalo.me/0971067676"
+              class="btn-zalo-sidebar"
+              data-i18n="btnZaloSidebar"
               >Nhắn qua Zalo</a
             >
-            <a href="tel:0888868025" class="btn-call-sidebar">Gọi ngay</a>
+            <a
+              href="tel:0888868025"
+              class="btn-call-sidebar"
+              data-i18n="btnCallSidebar"
+              >Gọi ngay</a
+            >
           </div>
         </div>
       </aside>
@@ -174,28 +201,18 @@
         <div class="shop-header">
           <div class="filter-mobile-wrapper" onclick="toggleSidebar()">
             <img src="image/filter.png" alt="filter" class="filter-icon-img" />
-            <span>Lọc</span>
+            <span data-i18n="btnFilterMobile">Lọc</span>
           </div>
           <p id="product-count-text">Đang tải kết quả...</p>
           <select class="sort-select">
-            <option value="newest">Mới nhất</option>
-            <option value="oldest">Cũ nhất</option>
+            <option value="newest" data-i18n="sortNewest">Mới nhất</option>
+            <option value="oldest" data-i18n="sortOldest">Cũ nhất</option>
           </select>
         </div>
         <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
         <div class="product-grid" id="shop-product-grid"></div>
 
-        <div class="pagination-product">
-          <a href="#" class="page-item active">1</a>
-          <a href="#" class="page-item">2</a>
-          <a href="#" class="page-item">3</a>
-          <a href="#" class="page-item">4</a>
-          <span class="dots">...</span>
-          <a href="#" class="page-item">49</a>
-          <a href="#" class="page-item">50</a>
-          <a href="#" class="page-item">51</a>
-          <a href="#" class="page-item next-btn">&gt;</a>
-        </div>
+        <div class="pagination-product"></div>
       </main>
     </div>
 
@@ -206,7 +223,9 @@
             <img src="image/logo.png" alt="DQ Uniform Logo" />
           </div>
           <div class="footer-newsletter">
-            <p>Cập nhật thiết kế mới, ưu đãi độc quyền!</p>
+            <p data-i18n="newsletterText">
+              Cập nhật thiết kế mới, ưu đãi độc quyền!
+            </p>
             <div class="newsletter-form">
               <input type="email" placeholder="Email Address" />
               <button type="submit">
@@ -220,55 +239,73 @@
 
         <div class="footer-content">
           <div class="footer-col">
-            <h3>Thông tin liên hệ</h3>
+            <h3 data-i18n="ftColContact">Thông tin liên hệ</h3>
             <ul>
               <li>
-                <img src="image/location.png" class="footer-icon" /> Hồ Chí
-                Minh: 176/6m Đường Ấp Đông 1-2, Đông Thạnh, Hồ Chí Minh
+                <img src="image/location.png" class="footer-icon" />
+                Hồ Chí Minh: 176/6m Đường Ấp Đông 1-2, Đông Thạnh, Hồ Chí Minh
               </li>
-              <li>
-                <img src="image/telephone 1.png" class="footer-icon" /> Điện
-                thoại: 0888868025
+              <li data-i18n="ftPhone">
+                <img src="image/telephone 1.png" class="footer-icon" /> Phone:
+                0888868025
               </li>
               <li>
                 <img src="image/mail.png" class="footer-icon" /> Email:
                 dqunisex@gmail.com
               </li>
-              <li>
-                <img src="image/clock.png" class="footer-icon" /> Thời gian làm
-                việc: T2 - T6: 08:00 - 20:00
+              <li data-i18n="ftWorkTime">
+                <img src="image/clock.png" class="footer-icon" /> Working time:
+                T2 - T6: 08:00 - 20:00
               </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3>Liên kết nhanh</h3>
+            <h3 data-i18n="ftColQuickLinks">Liên kết nhanh</h3>
             <ul>
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Sản phẩm</a></li>
-              <li><a href="#">Liên hệ</a></li>
+              <li><a href="index.html" data-i18n="navHome">Trang chủ</a></li>
+              <li>
+                <a href="products.html" data-i18n="navProducts">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="tel:0888868025" data-i18n="ftContactLink">Liên hệ</a>
+              </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3>Thông tin hướng dẫn</h3>
+            <h3 data-i18n="ftColGuides">Thông tin hướng dẫn</h3>
             <ul>
-              <li><a href="#">Hướng dẫn thanh toán</a></li>
-              <li><a href="#">Hướng dẫn chọn size</a></li>
-              <li><a href="#">Hướng dẫn đặt hàng</a></li>
-              <li><a href="#">Chính sách bảo hành hoàn tiền</a></li>
-              <li><a href="#">Chính sách mua hàng</a></li>
-              <li><a href="#">Chính sách giao hàng</a></li>
+              <li><a href="#" data-i18n="gPayment">Hướng dẫn thanh toán</a></li>
+              <li><a href="#" data-i18n="gSize">Hướng dẫn chọn size</a></li>
+              <li><a href="#" data-i18n="gOrder">Hướng dẫn đặt hàng</a></li>
+              <li>
+                <a href="#" data-i18n="gWarranty"
+                  >Chính sách bảo hành hoàn tiền</a
+                >
+              </li>
+              <li><a href="#" data-i18n="gPurchase">Chính sách mua hàng</a></li>
+              <li>
+                <a href="#" data-i18n="gDelivery">Chính sách giao hàng</a>
+              </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h3>Danh mục sản phẩm</h3>
+            <h3 data-i18n="ftColCat">Danh mục sản phẩm</h3>
             <ul>
-              <li><a href="#">Đồng phục áo thun</a></li>
-              <li><a href="#">Đồng phục công sở</a></li>
-              <li><a href="#">Đồng phục nhà hàng</a></li>
-              <li><a href="#">Đồng phục học sinh</a></li>
+              <li><a href="#" data-i18n="catSport">Đồng phục thể thao</a></li>
+              <li>
+                <a href="#" data-i18n="catConstruction">Đồng phục công trình</a>
+              </li>
+              <li>
+                <a href="#" data-i18n="catCompany">Đồng phục công ty</a>
+              </li>
+              <li>
+                <a href="#" data-i18n="catTeamBuilding"
+                  >Đồng phục Team Building</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -283,7 +320,7 @@
             <a href="#">Sitemap Pages</a>
             <a href="#">Sitemap Products</a>
           </div>
-          <p class="copyright">© 2023 All Rights Reserved</p>
+          <p class="copyright">© 2025 All Rights Reserved</p>
         </div>
       </div>
     </footer>
@@ -313,11 +350,10 @@
       </a>
     </div>
 
-    <!--Linking SwipperJS-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
     <script src="data.js"></script>
-    <script src="detail.js"></script>
+    <script src="lang.js"></script>
+    <script src="script.js"></script>
     <script src="product.js"></script>
   </body>
 </html>

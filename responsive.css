@@ -2,7 +2,6 @@
     .navbar {
         padding: 0 20px;
     }
-
     /* Ẩn Tìm kiếm và Hotline trên Mobile để Header không bị quá cao */
     .search-box, .hotline {
         display: none;
@@ -27,6 +26,7 @@
         gap: 30px;
         transition: 0.4s ease;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        z-index: 990;
     }
 
     .nav-menu.active {
@@ -242,6 +242,23 @@
     .btn-two-columns {
         grid-template-columns: 1fr;
     }
+    * Thu nhỏ toàn bộ cụm nút gạt bao gồm cả chữ VIE / ENG */
+  .lang-switch-wrapper {
+    transform: scale(0.8); /* Hạ xuống 0.8 để nhỏ lại 20%, muốn nhỏ nữa thì để 0.75 hoặc 0.7 */
+    transform-origin: right center; /* Giữ tâm thu nhỏ lệch về bên phải để không bị lệch bố cục */
+    gap: 5px; /* Thu hẹp khoảng cách giữa chữ và nút */
+  }
+
+  /* Hoặc nếu bạn CHỈ muốn thu nhỏ duy nhất cái nút gạt (bỏ qua chữ VIE/ENG) */
+  .lang-switch-wrapper .switch {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+  
+  /* Giảm thêm cỡ chữ VIE và ENG trên mobile nếu cần */
+  .lang-label {
+    font-size: 12px;
+  }
 }
 @media (max-width: 549px) {
     .bn-1 {

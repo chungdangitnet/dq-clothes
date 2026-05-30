@@ -86,17 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Kiểm tra nếu đang ở trang chủ (có thẻ .card-list) và dữ liệu products tồn tại
   if (cardList && typeof products !== "undefined") {
+    // 🌟 LẤY NGÔN NGỮ HIỆN TẠI ĐỂ RENDER ĐÚNG CHỮ
+    const currentLang = localStorage.getItem("language") || "vi";
+
     let htmlResult = "";
     const newProducts = products.filter((product) => product.type === "new");
 
     newProducts.slice(0, 6).forEach((product) => {
       // Mỗi sản phẩm click vào sẽ tự truyền đúng ID sang trang detail.html
+      // 🌟 ĐÃ ĐỔI: ${product.name} -> ${product.name[currentLang]}
       htmlResult += `
         <li class="card-item swiper-slide">
           <a href="detail.html?id=${product.id}" class="card-link" style="text-decoration: none; color: inherit; display: block;">
-            <img src="${product.image}" alt="${product.name}" class="card-imge" />
-            <h3 class="card-title">${product.name}</h3>
-            <button class="btn-contact" style="pointer-events: none;">Liên hệ ngay</button>
+            <img src="${product.image}" alt="${product.name[currentLang]}" class="card-imge" />
+            <h3 class="card-title">${product.name[currentLang]}</h3>
+            <button class="btn-contact" data-i18n="btnContact" style="pointer-events: none;">Liên hệ ngay</button>
           </a>
         </li>
       `;
