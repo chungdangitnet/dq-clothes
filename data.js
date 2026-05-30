@@ -27,6 +27,7 @@ const translations = {
     catHopLop: "Đồng phục họp lớp",
     sidebarTitleSupport: "Hỗ trợ tư vấn",
     heroZaloTop: "TƯ VẤN QUA",
+    btnFilterMobile: "Lọc",
     aboutContent:
       "Đồng phục DQ Clothes là sự kết hợp hoàn hảo giữa thiết kế thời thượng, chất liệu cao cấp và kỹ thuật may tinh xảo, giúp nâng tầm diện mạo và khẳng định bản sắc riêng cho mọi doanh nghiệp.",
     titleNews: "TIN TỨC",
@@ -117,6 +118,7 @@ const translations = {
     heroZaloTop: "CONSULTATION VIA",
     sidebarTitleSupport: "Consulting support",
     catHopLop: "Class meeting uniform",
+    btnFilterMobile: "Filter",
     aboutContent:
       "DQ Clothes uniforms are the perfect combination of trendy design, high-quality materials and sophisticated sewing techniques, helping to enhance the appearance and affirm the unique identity of every business.",
     titleNews: "NEWS",
